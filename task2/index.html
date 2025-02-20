@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>UI components</title>
+	</head>
+	<body>
+		<h1>UI-комплект</h1>
+
+		<!-- Текстовое поле -->
+		<div class="ui-component">
+			<label for="textField">Введите текст</label>
+			<input type="text" id="textField" placeholder="Ваш текст" />
+		</div>
+
+		<!-- Кнопка -->
+		<div class="ui-component">
+			<button type="button">Нажми меня</button>
+		</div>
+
+		<!-- Выпадающий список -->
+		<div class="ui-component">
+			<label for="dropdown">Выберите опцию</label>
+			<select id="dropdown">
+				<option value="option1">Опция 1</option>
+				<option value="option2">Опция 2</option>
+				<option value="option3">Опция 3</option>
+			</select>
+		</div>
+
+		<!-- Чекбокс -->
+		<div class="ui-component">
+			<input type="checkbox" id="checkbox1" />
+			<label for="checkbox1">Просто чекбокс</label>
+		</div>
+
+		<!-- Радиокнопка -->
+		<div class="ui-component">
+			<input type="radio" name="radioGroup" id="radio1" />
+			<label for="radio1">Радио 1</label>
+			<br />
+			<input type="radio" name="radioGroup" id="radio2" />
+			<label for="radio2">Радио 2</label>
+		</div>
+
+		<!-- Метка с чекбоксом -->
+		<div class="ui-component">
+			<label>
+				<input type="checkbox" />
+				Чекбокс с меткой
+			</label>
+		</div>
+
+		<!-- Метка с радиокнопкой -->
+		<div class="ui-component">
+			<label>
+				<input type="radio" name="radioGroup2" />
+				Радио с меткой
+			</label>
+		</div>
+
+		<!-- Выпадающий календарь -->
+		<div class="ui-component">
+			<label for="datePicker">Выберите дату</label>
+			<input type="date" id="datePicker" />
+		</div>
+
+		<!-- Диапазон -->
+		<div class="ui-component">
+			<label for="rangeInput">Выберите значение</label>
+			<input type="range" id="rangeInput" min="0" max="100" value="50" />
+		</div>
+
+		<!-- Прогресс-бар -->
+		<div class="ui-component">
+			<label>Прогресс</label>
+			<div class="progress-bar">
+				<div class="progress-bar-inner"></div>
+			</div>
+		</div>
+	</body>
+</html>

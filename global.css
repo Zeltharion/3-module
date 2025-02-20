@@ -1,0 +1,40 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	height: 100vh;
+}
+.tasks {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	max-width: 1200px;
+}
+.task {
+	background-color: #e0e0e0;
+	border-radius: 10px;
+	padding: 20px;
+	width: 250px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	transition: background-color 0.3s;
+}
+.task:hover {
+	background-color: #d0d0d0;
+}
+.task h2 {
+	margin: 0;
+	font-size: 24px;
+}
+.task-description {
+	display: block;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #555;
+}

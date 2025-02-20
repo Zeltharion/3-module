@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+}
+
+.sprite {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		animation: spriteMove 1s steps(4) infinite;
+	}
+
+	@keyframes spriteMove {
+		from {
+			transform: translate(0px, 0);
+		}
+		to {
+			transform: translate(-100%, 0);
+		}
+	}
+}

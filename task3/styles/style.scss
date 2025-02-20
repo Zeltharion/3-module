@@ -1,0 +1,73 @@
+@use "sass:math";
+
+$scene-size: 200px;
+$cube-color: rgba(71, 222, 228, 0.9);
+$cube-cell-border: 2px solid rgba(0, 0, 0, 0.3);
+$cube-face-shadow: 0 0 20px rgba(136, 136, 136, 0.5);
+$cube-face-size: math.div($scene-size, 2);
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background: #333;
+	overflow: hidden;
+}
+
+.scene {
+	width: $scene-size;
+	height: $scene-size;
+	perspective: 800px;
+
+	&__cube {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		transform-style: preserve-3d;
+		animation: scene__cube-rotate 10s infinite linear;
+
+		&-face {
+			display: grid;
+			grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: $cube-color;
+			filter: drop-shadow($cube-face-shadow);
+			transform-origin: center;
+
+			&.scene__cube-face--front {
+				transform: translateZ($cube-face-size);
+			}
+			&.scene__cube-face--back {
+				transform: rotateY(180deg) translateZ($cube-face-size);
+			}
+			&.scene__cube-face--right {
+				transform: rotateY(90deg) translateZ($cube-face-size);
+			}
+			&.scene__cube-face--left {
+				transform: rotateY(-90deg) translateZ($cube-face-size);
+			}
+			&.scene__cube-face--top {
+				transform: rotateX(90deg) translateZ($cube-face-size);
+			}
+			&.scene__cube-face--bottom {
+				transform: rotateX(-90deg) translateZ($cube-face-size);
+			}
+
+			&__cell {
+				display: block;
+				border: $cube-cell-border;
+				box-sizing: border-box;
+			}
+		}
+	}
+
+	@keyframes scene__cube-rotate {
+		to {
+			transform: rotateX(360deg) rotateY(360deg);
+		}
+	}
+}
